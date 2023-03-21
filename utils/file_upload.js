@@ -1,6 +1,7 @@
 "use strict"
-const token = require("./token");
-const TOKEN = token.TOKEN;
+
+require('dotenv').config();
+const TOKEN = process.env.TOKEN;
 const https = require('https');
 const fs = require('fs');
 exports.upload_file = (filename) => {
@@ -21,13 +22,6 @@ exports.upload_file = (filename) => {
 		}, (res) => {
 			console.log("statusCode: ", res.statusCode);
 			console.log("headers: ", res.headers);
-			if (res.statusCode == 200)
-			{
-				/** put setTimeout here */
-			}
-			/**res.on('data', function(d) {
-				process.stdout.write(d);
-			});*/
 		});
 	
 		req.write(data);

@@ -1,14 +1,14 @@
 "use strict"
-const token = require("./token");
-const TOKEN = token.TOKEN;
+
+require('dotenv').config();
+const TOKEN = process.env.TOKEN;
 const https = require('node:https');
-
-
 
 exports.get_metadata = (file_name) => {
     const options = {
-        hostname : "api.dropboxapi.com/2/files/get_metadata",
+        hostname : "api.dropboxapi.com",
         method : "POST",
+        path : "/files/get_metadata",
         headers : {
             "Authorization" : `Bearer ${TOKEN}`,
             "Content-Type" : "application/json"

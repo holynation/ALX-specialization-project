@@ -1,7 +1,6 @@
 "use strict"
-const token = require("./token");
-const TOKEN = token.TOKEN;
-
+require('dotenv').config();
+const TOKEN = process.env.TOKEN;
 var https = require("https");
 exports.download_file  = (file_name) => {
     const req = https.request('https://content.dropboxapi.com/2/files/download', {
