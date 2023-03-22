@@ -1,2 +1,0 @@
-##PrivShare
-Privshare is a full web application for file sharing such as documents, images, videos and oth>be stored and will be available for sharing through a custom generated link, then >hours. The 24hrs limits avail privacy and confidentiality of the files as the uplo>to the user and anyone they share it with. The app is a creative solution that ens>with individuals or groups simpler. Users will be able to share files with friends>people or groups in a secure, quick, and effective manner thanks to the app.

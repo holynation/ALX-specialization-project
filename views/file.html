@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Uploaded Successfully</title>
+    <style>
+        body {
+            background-color: #3399FF;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            margin-bottom: 20px;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+
+        a {
+            background-color: white;
+            color: #3399FF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #3399FF;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>File Uploaded Successfully</h1>
+    <p>Preview of {filename}:</p>
+    <img src="/uploads/{filename}" width="300">
+    <br>
+    <a href="{downloadLink}" download>Download {filename}</a>
+</body>
+
+</html>
