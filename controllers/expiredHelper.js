@@ -23,7 +23,7 @@ const deleteExpiredFiles = async () => {
         );
 
         // Disconnect from database
-        await mongoose.disconnect();
+        //await mongoose.disconnect();
 
         console.log(`${expiredFiles.length} expired files deleted`);
     } catch (err) {

@@ -40,6 +40,11 @@ db.once('open', () => {
 app.use('/', routes);
 
 setInterval(deleteExpiredFiles, 1 * 60 * 1000);
+setInterval(() => {
+  const status = db.readyState;
+  console.log(`Database connection status: ${status}`);
+}, 60 * 1000);
+
 
 // Start server
 app.listen(config.port, () => {
