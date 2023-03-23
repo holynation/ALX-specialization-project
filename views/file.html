@@ -14,7 +14,7 @@
             color: white;
         }
 
-        h1 {
+        css Copy code h1 {
             font-size: 36px;
             margin-bottom: 20px;
         }
@@ -46,7 +46,31 @@
             background-color: #3399FF;
             color: white;
         }
+
+        button {
+            background-color: white;
+            color: #3399FF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3399FF;
+            color: white;
+        }
     </style>
+    <script>
+        function copyLink() {
+            const downloadLink = document.querySelector('a[ref="downloadLink"]');
+            const link = downloadLink.href;
+            navigator.clipboard.writeText(link);
+        }
+    </script>
 </head>
 
 <body>
@@ -54,7 +78,8 @@
     <p>Preview of {filename}:</p>
     <img src="/uploads/{filename}" width="300">
     <br>
-    <a href="{downloadLink}" download>Download {filename}</a>
+    <a ref="downloadLink" href="{downloadLink}" download>Download File</a>
+    <button onclick="copyLink()">Copy download link</button>
 </body>
 
 </html>

@@ -40,6 +40,7 @@ exports.uploadFile = async (req, res) => {
         // Replace the placeholders with actual values
         const outputHtml = html.replace('{filename}', newFile.name).replace('{downloadLink}', downloadLink);
 
+
         // Send the HTML file as response
         res.send(outputHtml);
     } catch (err) {
