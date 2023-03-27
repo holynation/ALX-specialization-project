@@ -1,0 +1,43 @@
+/*index.css*/
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 3px rgb(222, 222, 239) dashed;
+    padding: 2rem;
+}
+
+.dropzone-content{
+  padding-bottom: .4rem;
+}
+
+@media only screen and (max-width: 530px) {
+  .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center ;
+  }
+}
+
+.btn {
+    border: none;
+    text-align: center;
+    background-color: rgb(218, 216, 216);
+    height: 35px;
+    border-radius: 8px;
+    color: black;
+    font-weight: bold;
+    transition-duration: 0.6s;
+    padding: 0 10px;
+  }
+  
+  .btn:hover {
+    background-color: rgb(159, 159, 239);
+    color: white;
+  }
+
+  .filename ul{
+    margin-top: .5rem;
+    list-style: none;
+}

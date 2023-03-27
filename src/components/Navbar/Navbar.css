@@ -1,0 +1,27 @@
+.navbar {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.news {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+.news:hover {
+    background-color: rgb(159, 159, 239);
+    color: white;
+  }
