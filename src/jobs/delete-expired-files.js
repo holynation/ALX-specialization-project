@@ -23,5 +23,3 @@ async function deleteExpiredFiles() {
 }
 
 module.exports = deleteExpiredFiles;
-
-deleteExpiredFiles();

@@ -4,6 +4,7 @@ const { File } = require("./file.model");
 const { multer } = require("../storage");
 const config = require("../config");
 const createHttpError = require("http-errors");
+const {MulterError} = require("multer");
 
 const upload = multer.single("file");
 const fileRouter = Router();
@@ -14,7 +15,9 @@ fileRouter.post(
     upload(req, res, function (err) {
       if (!err) return next();
 
-      if (err instanceof multer.MulterError) {
+      console.log(typeof(err))
+      console.log(err)
+      if (err instanceof MulterError) {
         next(createHttpError(400, err.message));
       } else {
         next(err);

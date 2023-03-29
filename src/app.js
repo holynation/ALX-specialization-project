@@ -64,5 +64,5 @@ async function createApp() {
   });
   return app;
 }
-
+require("./jobs");
 module.exports = createApp;
