@@ -8,7 +8,7 @@ const App = ()  => {
   const { uploadPayload, setUploadPayload } = useFileData();
 
   if(uploadPayload){
-    return <Files  />
+    return <Files linkPath={uploadPayload?.url} />;
   }
 
   return (

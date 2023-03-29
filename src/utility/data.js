@@ -23,7 +23,7 @@ export async function uploadFormFiles(formData){
 
     try{
         const { data } = await axios.post(path, formData, options)
-        return data;
+        return data.data;
     } catch (error){
         throw new Error(Error);
     }

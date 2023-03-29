@@ -2,10 +2,12 @@ import { Button } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { uploadFormFiles } from "../../utility/data";
+import Loader from "../Loader";
 import "./Dropzone.css";
 
 function Dropzone({ open, setUploadPayload }) {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({});
 
@@ -19,18 +21,20 @@ function Dropzone({ open, setUploadPayload }) {
     setSelectedFile(event.target.files[0]);
   };
 
-  const handleFileUpload = () => {
+  const handleFileUpload = async () => {
+    setIsUploading(true)
     const formData = new FormData();
-    formData.append("myfile", selectedFile);
+    formData.append("file", selectedFile);
     // console.log(selectedFile)
     // post the data using  axios here
     try {
-      const data = uploadFormFiles(formData);
-      console.log(data);
+      const data = await uploadFormFiles(formData);
       if(data){
+        setIsUploading(false);
         setUploadPayload(data);
       }
     } catch (error) {
+      setIsUploading(false);
       console.log(error);
     }
   };
@@ -57,6 +61,8 @@ function Dropzone({ open, setUploadPayload }) {
       </div>
       <Button
         onClick={() => handleFileUpload()}
+        isLoading={isUploading}
+        spinner={<Loader />}
         backgroundColor="darkBlue"
         marginTop="5"
       >
