@@ -1,7 +1,6 @@
-const serverName = '';
+const serverName = 'https://';
 
-export const backBase = window.location.host == 'localhost' ?
-    'http://localhost:8081/' : serverName+'/';
+export const basePath = 'http://localhost:5000/';
 
 export function combinePath(url) {
     return basePath+url;

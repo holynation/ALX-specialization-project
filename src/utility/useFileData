@@ -1,0 +1,20 @@
+import { useState } from 'react';
+
+export default function useFileData() {
+  const getPayload = () => {
+    const tokenString = sessionStorage.getItem('priv-payload');
+    const userPayload = JSON.parse(tokenString);
+    return userPayload ?? null
+  };
+  const [uploadPayload, setUploadPayload] = useState(getPayload());
+
+  const savePayload = userPayload => {
+    sessionStorage.setItem('priv-payload', JSON.stringify(userPayload));
+    setUploadPayload(userPayload);
+  };
+
+  return {
+    setUploadPayload: savePayload,
+    uploadPayload
+  }
+}
