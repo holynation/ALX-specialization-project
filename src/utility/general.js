@@ -1,9 +1,7 @@
 const serverName = '';
 
-export const routerBase = '/';
-
-export const backBase = window.location.host != 'localhost' ?
-    'http://localhost/stagingui/' : serverName+'/';
+export const backBase = window.location.host == 'localhost' ?
+    'http://localhost:8081/' : serverName+'/';
 
 export function combinePath(url) {
     return basePath+url;
@@ -22,20 +20,6 @@ export function hasEmpty(data){
 }
 
 export const isArrayEmpty = (arr) => !arr || arr.length === 0;
-
-export const maskLabel = (str, max) => {
-  if (!str) return '';
-  const maxLen = str.length - max;
-  const maskStr = `${str.substring(0, maxLen)}****`
-  return maskStr;
-}
-
-export function convertObjToArr(obj) {
-  const withNestedKeys = Object.entries(obj).map(entry => {
-    return {[entry[0]]: entry[1]};
-  });
-  return withNestedKeys;
-}
 
 export const themes = {
   styles:{

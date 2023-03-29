@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 80%;
+    color: white;
 }
 
 .boxf {
@@ -14,6 +15,6 @@
 }
 
 
-  p {
-    text-align: center;
-  }
+p {
+  text-align: center;
+}

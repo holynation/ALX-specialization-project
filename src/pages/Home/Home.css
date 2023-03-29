@@ -1,0 +1,49 @@
+
+.boxes {
+  display: flex;
+  gap: 3rem;
+  min-height: 32rem;
+  justify-content: center;
+  align-items: center;
+  height: 76%;
+  color: white;
+}
+
+@media only screen and (max-width: 530px) {
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    min-height: 40vhem;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-spacing: 4rem;
+  }
+
+  .box {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+}
+
+.boxes>* {
+  flex: 1;
+}
+
+
+.text__box h1 {
+  padding-bottom: .4rem;
+}
+
+.text__box p {
+  text-align: left;
+}
+
+@media only screen and (max-width: 530px) {
+  .text__box p {
+    text-align: center;
+  }
+}
